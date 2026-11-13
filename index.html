@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Heloísa Prado - Portfólio</title>
+  <meta name="description" content="Portfólio de Maria Heloísa Prado: Engenharia Aeroespacial e Engenharia de Dados na UFABC, pesquisa científica, projetos de engenharia e impacto social em STEAM.">
+
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/easter-eggs.css">
+
+  <!-- 🚀 Psst… este site tem 4 easter eggs escondidos. Comece com ↑ ↑ ↓ ↓ ← → ← → B A -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Aviso dos easter eggs (fecha no ×; a escolha fica salva no navegador) -->
+  <aside class="egg-banner" data-egg-banner role="note" hidden>
+    <ion-icon name="sparkles-outline" aria-hidden="true"></ion-icon>
+    <p class="egg-banner-text">
+      <strong>Psiu!</strong> Este portfólio esconde <strong>4 easter eggs</strong>. Consegue encontrar todos?
+    </p>
+    <button class="egg-banner-close" type="button" data-egg-banner-close aria-label="Fechar aviso dos easter eggs">
+      <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+    </button>
+  </aside>
+
+  <!-- Avião com dicas: cruza a tela a cada 1 min 30 s (texto sorteado pelo JS) -->
+  <div class="egg-tow" data-egg-tow aria-hidden="true" hidden>
+    <svg class="egg-tow-plane" viewBox="0 0 64 28" focusable="false">
+      <path d="M2 14 L12 11 L40 11 C48 11 56 12 62 14 C56 16 48 17 40 17 L12 17 Z" fill="#faf8fc"/>
+      <path d="M2 14 L12 11 L12 17 Z" fill="#e889bd"/>
+      <path d="M24 11 L34 1 L38 1 L34 11 Z" fill="#a97ee0"/>
+      <path d="M24 17 L34 27 L38 27 L34 17 Z" fill="#a97ee0"/>
+      <path d="M8 11 L5 5 L9 5 L13 11 Z" fill="#e889bd"/>
+      <circle cx="50" cy="13" r="2" fill="#1c1020"/>
+      <path d="M62 12 L63 16" stroke="#e889bd" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="egg-tow-rope"></span>
+    <span class="egg-tow-flag" data-egg-tow-text></span>
+  </div>
+
+  <main>
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box" data-egg-avatar>
+          <img src="./assets/images/fotos/maria-heloisa-dna-perfil.jpg" alt="Foto de Maria Heloísa Prado" width="80" height="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Maria Heloísa Prado">Maria Heloísa Prado</h1>
+          <p class="title">Engenharia Aeroespacial · UFABC</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Ver contatos</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:mariaheloprado@gmail.com" class="contact-link">mariaheloprado<wbr>@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Universidade</p>
+              <a href="https://www.ufabc.edu.br" class="contact-link" target="_blank" rel="noopener">UFABC</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="language-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Idiomas</p>
+              <p class="contact-text">PT · EN (B2) · ES · IT</p>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Local</p>
+              <address>Santo André, São Paulo</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/MariaHeloPrado" class="social-link" target="_blank" rel="noopener">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://shre.ink/LN6v" class="social-link" target="_blank" rel="noopener">
+              <ion-icon name="document-text-outline"></ion-icon>
+              <span>Lattes</span>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="mailto:mariaheloprado@gmail.com" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>Email</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="main-content">
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link="sobre">Sobre mim</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="curriculo">Currículo</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="projetos">Projetos</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="contato">Contato</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- =========================================
+           SOBRE MIM
+           ========================================= -->
+      <article class="about active" data-page="sobre">
+        <header>
+          <h2 class="h2 article-title">Sobre mim</h2>
+        </header>
+
+        <div class="about-intro">
+        <figure class="about-photo">
+          <img src="./assets/images/fotos/maria-heloisa-destaque.jpg" alt="Maria Heloísa Prado sorrindo durante o evento Uber She++" width="960" height="1200">
+          <figcaption>
+            <span>Uber She++ · São Paulo, 2025</span>
+            <span class="photo-credit">Foto: @h.agst</span>
+          </figcaption>
+        </figure>
+
+        <section class="about-text">
+          <p>
+            Sou Maria Heloísa, estudante de Engenharia Aeroespacial e de Engenharia de Dados na Universidade Federal do ABC (UFABC), onde também curso o Bacharelado em Ciência e Tecnologia. Moro em Santo André (SP) e construo uma trajetória interdisciplinar entre engenharia, tecnologia, análise de dados e impacto social.
+          </p>
+          <p>
+            Sou movida pela busca por conhecimento e inovação. Já atuei em ambientes corporativos como Mercedes-Benz Brasil, Shopper.com.br e Red Bull, e em pesquisa científica: da física de partículas, estudando o bóson W, à investigação da construção social de meninas nas áreas STEAM. Sou proativa e orientada a resultados, com facilidade para liderar, me comunicar e melhorar processos.
+          </p>
+          <p>
+            Fora da sala de aula, fundei o Instituto Mello, que aproxima jovens de simulações da ONU, aulas de inglês e mentorias, e atuo no TecMeninas ABC levando programação e letramento digital a meninas de escolas públicas. Busco unir conhecimento técnico e colaboração para criar soluções que resolvam problemas concretos e ampliem oportunidades.
+          </p>
+        </section>
+        </div>
+
+        <section class="service">
+          <h3 class="h3 service-title">O que estou fazendo</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <!-- easter egg: clique para lançar -->
+                <button class="egg-rocket" type="button" data-egg-rocket aria-label="Lançar foguete">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </button>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Engenharia Aeroespacial &amp; de Dados</h4>
+                <p class="service-item-text">Cursando os bacharelados em Engenharia Aeroespacial e Engenharia de Dados na UFABC, no período noturno, com formação prevista para 2028.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="flask-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Pesquisa no TecMeninas ABC</h4>
+                <p class="service-item-text">Como pesquisadora científica, apoio atividades de programação e letramento digital para estudantes de escolas públicas, incentivando meninas em STEM.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="sparkles-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Embaixadora Google Gemini</h4>
+                <p class="service-item-text">Exploro ferramentas de IA, compartilho boas práticas e incentivo o uso da inteligência artificial na aprendizagem, na produtividade e na resolução de problemas.</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="trending-up-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Estratégia, Dados &amp; Mercado Financeiro</h4>
+                <p class="service-item-text">Aprofundo análise de dados, construção de indicadores e gestão de negócios, com formações em finanças pelo Fin4She, Dn'A Women e ESPM.</p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <section class="highlights">
+          <h3 class="h3 highlights-title">Destaques</h3>
+          <ul class="highlights-list">
+            <li class="highlight-item">
+              <ion-icon name="trophy-outline"></ion-icon>
+              <p class="highlight-value">1º lugar · IREC 2025</p>
+              <p class="highlight-text">Categoria 10k SRAD Solid, com a equipe Rocket Design UFABC</p>
+            </li>
+            <li class="highlight-item">
+              <ion-icon name="medal-outline"></ion-icon>
+              <p class="highlight-value">1º lugar · SharkTank</p>
+              <p class="highlight-text">Semana do Produto Itaú Unibanco, proposta destaque em inovação e visão estratégica</p>
+            </li>
+            <li class="highlight-item">
+              <ion-icon name="ribbon-outline"></ion-icon>
+              <p class="highlight-value">Menção Honrosa · Yale MUN 2024</p>
+              <p class="highlight-text">Conquistada pela equipe do Instituto Mello, que liderei e orientei como mentora</p>
+            </li>
+            <li class="highlight-item">
+              <ion-icon name="people-outline"></ion-icon>
+              <p class="highlight-value">185 meninas</p>
+              <p class="highlight-text">Alcançadas pelo TecMeninas ABC em 2026, em 6 escolas de 3 cidades do Grande ABC</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="certificates">
+          <h3 class="h3 certificates-title">Cursos e Certificações</h3>
+          <ul class="certificates-list has-scrollbar">
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="bar-chart-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Power BI Avançado</h4>
+                <div class="certificates-text"><p>Daimler Truck</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="cloud-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">BigQuery &amp; AI</h4>
+                <div class="certificates-text"><p>Badge Google Cloud</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="server-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Databases e AI</h4>
+                <div class="certificates-text"><p>Google</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="sparkles-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Inteligência Artificial e Produtividade</h4>
+                <div class="certificates-text"><p>Google e Santander</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="nuclear-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Masterclasses on Particle Physics</h4>
+                <div class="certificates-text"><p>International Masterclasses · IA &amp; LaTeX</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="code-slash-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Meninas Programadoras</h4>
+                <div class="certificates-text"><p>USP · Python</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="terminal-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Maratona de Programação Feminina</h4>
+                <div class="certificates-text"><p>Python &amp; C++</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="bulb-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Uber Global Hacktown</h4>
+                <div class="certificates-text"><p>Design de produto e análise de dados</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="grid-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">SQL Server no Excel &amp; VBA</h4>
+                <div class="certificates-text"><p>LinkedIn Learning</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="trending-up-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Introdução ao Mercado Financeiro</h4>
+                <div class="certificates-text"><p>ESPM</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="leaf-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Economia Circular</h4>
+                <div class="certificates-text"><p>inpEV</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="create-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Workshops de Escrita</h4>
+                <div class="certificates-text"><p>Harvard Crimson</p></div>
+              </div>
+            </li>
+
+            <li class="certificates-item">
+              <div class="content-card">
+                <div class="cert-badge"><ion-icon name="ribbon-outline"></ion-icon></div>
+                <h4 class="h4 certificates-item-title">Representação Técnica UFABC</h4>
+                <div class="certificates-text"><p>Feiras e eventos, incluindo a Semana das Engenharias</p></div>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <section class="tech">
+          <h3 class="h3 tech-title">Tecnologias</h3>
+          <ul class="tech-list has-scrollbar">
+            <li class="tech-item"><img src="./assets/images/techs/python.svg" alt=""><span>Python</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/cplusplus.svg" alt=""><span>C++</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/matlab.svg" alt=""><span>MATLAB</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/powerbi.svg" alt=""><span>Power BI</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/microsoftexcel.svg" alt=""><span>Excel</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/azure.svg" alt=""><span>Azure</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/googlecloud.svg" alt=""><span>Google Cloud</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/googlebigquery.svg" alt=""><span>BigQuery</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/latex.svg" alt=""><span>LaTeX</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/html5.svg" alt=""><span>HTML</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/css3.svg" alt=""><span>CSS</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/javascript.svg" alt=""><span>JavaScript</span></li>
+            <li class="tech-item"><img src="./assets/images/techs/canva.svg" alt=""><span>Canva</span></li>
+            <li class="egg-star-slot"><button class="egg-star" type="button" data-egg-star="sobre" aria-label="Estrela escondida"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C12.6 8.2 15.8 11.4 22 12C15.8 12.6 12.6 15.8 12 22C11.4 15.8 8.2 12.6 2 12C8.2 11.4 11.4 8.2 12 2Z"/></svg></button></li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- =========================================
+           CURRÍCULO
+           ========================================= -->
+      <article class="resume" data-page="curriculo">
+        <header>
+          <h2 class="h2 article-title">Currículo</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Formação</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Universidade Federal do ABC (UFABC)</h4>
+              <span>Formação prevista: 11/2027 (BC&amp;T) · 11/2028 (Engenharias)</span>
+              <p class="timeline-text">
+                • <strong>Bacharelado em Ciência e Tecnologia:</strong> 10º quadrimestre (noturno), formação prevista em 11/2027.<br>
+                • <strong>Bacharelado em Engenharia Aeroespacial:</strong> 8º quadrimestre (noturno), formação prevista em 11/2028.<br>
+                • <strong>Bacharelado em Engenharia de Dados:</strong> 8º quadrimestre (noturno), formação prevista em 11/2028.<br>
+                • <strong>Desempenho:</strong> conceito A em Bases Computacionais da Ciência e em Processamento da Informação.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">SESI</h4>
+              <span>Ensino Médio</span>
+              <p class="timeline-text">
+                Ensino Médio com bolsa integral por mérito acadêmico. Participação nos projetos de robótica do SESI (Sorobóticos).
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experiência</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Pesquisadora Científica — Projeto TecMeninas ABC (UFABC)</h4>
+              <span>Fev 2026 — Atual</span>
+              <p class="timeline-text">
+                Atuação em iniciativas de ensino, extensão e popularização da ciência.<br><br>
+                • <strong>Programação e letramento digital:</strong> apoio ao desenvolvimento de atividades para estudantes de escolas públicas, contribuindo para democratizar o acesso à tecnologia e incentivar meninas e jovens em áreas STEM.<br>
+                • <strong>Comunicação:</strong> apoio à presença digital do projeto, incluindo Instagram e site.<br>
+                • <strong>Impacto:</strong> em 2026, o projeto alcançou 185 meninas em 6 escolas de 3 cidades do Grande ABC.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Estagiária de Marketing | Embaixadora Red Bull na UFABC — Red Bull</h4>
+              <span>Fev 2026 — Out 2026</span>
+              <p class="timeline-text">
+                Desenvolvimento de projetos de Hacks, seeding e sampling, principalmente dentro da UFABC, e atuação em eventos externos com o objetivo de levar o consumo funcional ao público EPC.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Estagiária de Negociação — Shopper.com.br</h4>
+              <span>Ago 2025 — Jan 2026 (6 meses)</span>
+              <p class="timeline-text">
+                • <strong>Negociação com fornecedores:</strong> contato direto para negociação de custos e aderência de novos SKUs, buscando os melhores valores de venda e a melhora do sell-out da empresa.<br>
+                • <strong>Pet.Shopper:</strong> responsável pelo mix de SKUs, negociação de reajustes de preço, rentabilidade e revisão de sortimentos.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Estagiária de Engenharia — Mercedes-Benz Brasil</h4>
+              <span>Set 2024 — Jul 2025 (11 meses)</span>
+              <p class="timeline-text">
+                Atuação na interface entre engenharia e análise de dados, com foco em automação de processos, rastreabilidade técnica e suporte à tomada de decisão.<br><br>
+                • <strong>Dados e BI:</strong> desenvolvimento de dashboards em Power BI e Excel.<br>
+                • <strong>Projeto AUB Tractor:</strong> coordenação do fluxo de amostras e contribuição em testes e validações técnicas.<br>
+                • <strong>Qualidade de fornecedores:</strong> avaliação por meio de ICAs e OSAs, promovendo melhorias contínuas e alinhamento com padrões de qualidade.<br>
+                • <strong>Inovação:</strong> concepção da plataforma interna de troca de conhecimentos "Faça sua estrela brilhar"<button class="egg-star egg-star-inline" type="button" data-egg-star="curriculo" aria-label="Estrela escondida"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C12.6 8.2 15.8 11.4 22 12C15.8 12.6 12.6 15.8 12 22C11.4 15.8 8.2 12.6 2 12C8.2 11.4 11.4 8.2 12 2Z"/></svg></button> (veja em Projetos).
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Pesquisadora Científica — UFABC</h4>
+              <span>2024 — 2025</span>
+              <p class="timeline-text">
+                • Estudo da produção e reconstrução do bóson W em colisões de altas energias.<br>
+                • Geração de eventos Monte Carlo e análise de dados em colaboração com o SPRACE.
+                <img class="timeline-photo" src="./assets/images/fotos/lab-science.jpg" alt="Maria Heloísa Prado e uma colega de jaleco em laboratório da UFABC" width="1200" height="675" loading="lazy">
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Liderança e Voluntariado</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Fundadora — Instituto Mello</h4>
+              <p class="timeline-text">Lidero simulações de MUN e debates para educação política; a iniciativa evoluiu para aulas de inglês e mentorias. No Yale MUN 2024, liderei a equipe do instituto como mentora e guia dos alunos, e a equipe conquistou Menção Honrosa.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Embaixadora Google Gemini</h4>
+              <span>2026</span>
+              <p class="timeline-text">Uso da inteligência artificial no ambiente acadêmico: exploração de ferramentas, compartilhamento de boas práticas e incentivo à aplicação da IA.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Past-President — Rotary Club</h4>
+              <p class="timeline-text">Gestão de projetos comunitários, palestras, eventos e desenvolvimento profissional.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Líder de Projetos e Inovação — Girl Up (ONU)</h4>
+              <p class="timeline-text">Atuação na interface com empresas parceiras e eventos, além de design e marketing digital.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Jovem Líder — Garotas na Ciência (ONU)</h4>
+              <p class="timeline-text">Participação como jovem líder em eventos na área STEAM.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Parceira — Podemos</h4>
+              <p class="timeline-text">Apoio ao desenvolvimento de jovens para olimpíadas de conhecimento.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Voluntária — Hamburgada do Bem e Nossa Casinha</h4>
+              <p class="timeline-text">Evento beneficente de apoio a causas sociais e ensino de português para refugiados.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="programs">
+          <h3 class="h3 programs-title">Programas e Imersões</h3>
+          <ul class="programs-list">
+            <li class="program-item program-feature">
+              <figure class="program-photo">
+                <img src="./assets/images/fotos/maria-heloisa-she-plus-plus.jpg" alt="Maria Heloísa Prado no evento Uber She++, em São Paulo" width="600" height="800" loading="lazy">
+              </figure>
+              <div class="program-body">
+                <h4 class="program-name">She++ | Uber</h4>
+                <p class="program-meta">São Paulo · junho de 2025</p>
+                <p class="program-text">Programa altamente seletivo da Uber que conecta jovens mulheres de destaque em tecnologia e engenharia a líderes da empresa. Com mentorias, workshops e imersão em desafios reais do setor, o She++ acelera o desenvolvimento de futuras líderes, reforçando a diversidade e a inovação no ecossistema tech.</p>
+                <p class="photo-credit">Foto: @h.agst</p>
+              </div>
+            </li>
+            <li class="program-item program-feature">
+              <figure class="program-photo program-photo-portrait">
+                <img src="./assets/images/fotos/dna-women.jpg" alt="Maria Heloísa Prado segurando o certificado de Introdução ao Mercado Financeiro (ESPM e Dn'A Women)" width="700" height="1017" loading="lazy">
+              </figure>
+              <div class="program-body">
+                <h4 class="program-name">Dn'A Women</h4>
+                <p class="program-meta">Certificado ESPM · Introdução ao Mercado Financeiro</p>
+                <p class="program-text">Programa internacional de desenvolvimento de universitárias de alto potencial, criado por líderes de bancos como UBS e Goldman Sachs.</p>
+              </div>
+            </li>
+            <li class="program-item program-feature">
+              <figure class="program-photo">
+                <img src="./assets/images/fotos/fin4she-young-women-summit.jpg" alt="Maria Heloísa Prado e colegas exibindo os certificados do Programa Young Women Summit 2025, do Fin4She" width="1200" height="675" loading="lazy">
+              </figure>
+              <div class="program-body">
+                <h4 class="program-name">Fin4She</h4>
+                <p class="program-meta">Young Women Summit 2025 · 100 horas</p>
+                <p class="program-text">Capacitação feminina no mercado financeiro, com mentorias de executivas e preparação para certificações ANBIMA.</p>
+              </div>
+            </li>
+            <li class="program-item program-feature">
+              <div class="program-photo program-photo-duo">
+                <img src="./assets/images/fotos/hackathon-ai-multicloud-equipe.jpg" alt="Maria Heloísa Prado com a equipe no palco do Hackathon de AI e Multi-Cloud, em frente ao slide &quot;Our Team&quot;" width="1200" height="762" loading="lazy">
+                <img src="./assets/images/fotos/hackathon-ai-multicloud-cubo.jpg" alt="Maria Heloísa Prado trabalhando com a equipe durante o Hackathon de AI e Multi-Cloud, no Cubo" width="1000" height="666" loading="lazy">
+              </div>
+              <div class="program-body">
+                <h4 class="program-name">Hackathon de AI e Multi-Cloud</h4>
+                <p class="program-text">Competição do Itaú com foco em soluções de IA, dados e nuvem para desafios reais do setor financeiro.</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">Bootcamp Locke</h4>
+              <p class="program-text">Imersão seletiva em filosofia, política e inovação para a formação de jovens líderes.</p>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">Uber Global Hacktown</h4>
+              <p class="program-text">Programa global com foco em design de produto e análise de dados.</p>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">Green Team Hacker Club</h4>
+              <p class="program-text">Programação e proteção de dados.</p>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">GitHub Copilot Day</h4>
+              <p class="program-text">Evento sobre o uso de ferramentas de IA no desenvolvimento de software.</p>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">Google Cloud Summit Brasil</h4>
+              <p class="program-text">Evento do Google Cloud sobre nuvem, dados e inteligência artificial.</p>
+            </li>
+            <li class="program-item">
+              <h4 class="program-name">B3 Career Summit</h4>
+              <p class="program-text">Imersão em liderança e carreira no mercado financeiro.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="language-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Idiomas</h3>
+          </div>
+          <ul class="languages-list">
+            <li class="language-item">
+              <span class="language-name">Português</span>
+              <span class="language-level">Nativo</span>
+              <span class="language-meter" data-level="6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </li>
+            <li class="language-item">
+              <span class="language-name">Inglês</span>
+              <span class="language-level">B2</span>
+              <span class="language-meter" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </li>
+            <li class="language-item">
+              <span class="language-name">Espanhol</span>
+              <span class="language-level">A2</span>
+              <span class="language-meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </li>
+            <li class="language-item">
+              <span class="language-name">Italiano</span>
+              <span class="language-level">A1</span>
+              <span class="language-meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </li>
+          </ul>
+          <p class="languages-note">Níveis segundo o Quadro Europeu Comum de Referência (A1 a C2).</p>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">Competências</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <h5 class="h5">Programação</h5>
+              <ul class="skill-tags">
+                <li>Python</li><li>C++</li><li>MATLAB</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>VBA</li>
+              </ul>
+            </li>
+            <li class="skills-item">
+              <h5 class="h5">Dados &amp; BI</h5>
+              <ul class="skill-tags">
+                <li>Power BI avançado</li><li>Excel</li><li>SQL Server no Excel</li><li>BigQuery</li>
+              </ul>
+            </li>
+            <li class="skills-item">
+              <h5 class="h5">Cloud &amp; Automação</h5>
+              <ul class="skill-tags">
+                <li>Microsoft Office</li><li>Azure</li><li>Google Cloud</li><li>Power Automate</li>
+              </ul>
+            </li>
+            <li class="skills-item">
+              <h5 class="h5">Inteligência Artificial</h5>
+              <ul class="skill-tags">
+                <li>Google Gemini</li><li>ChatGPT</li><li>Claude</li><li>GitHub Copilot</li>
+              </ul>
+            </li>
+            <li class="skills-item">
+              <h5 class="h5">Documentação &amp; Design</h5>
+              <ul class="skill-tags">
+                <li>LaTeX</li><li>Canva</li>
+              </ul>
+            </li>
+            <li class="skills-item">
+              <h5 class="h5">Comportamentais</h5>
+              <ul class="skill-tags">
+                <li>Comunicação assertiva</li><li>Liderança de equipes multidisciplinares</li><li>Resolução de problemas</li><li>Pensamento analítico</li><li>Proatividade</li><li>Adaptabilidade</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- =========================================
+           PROJETOS
+           ========================================= -->
+      <article class="projects-section" data-page="projetos">
+        <header>
+          <h2 class="h2 article-title">Projetos</h2>
+        </header>
+
+        <section class="projects">
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn="todos">Todos</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="engenharia">Engenharia</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="pesquisa">Pesquisa</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="impacto">Impacto</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Todos</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item="todos">Todos</button></li>
+              <li class="select-item"><button data-select-item="engenharia">Engenharia</button></li>
+              <li class="select-item"><button data-select-item="pesquisa">Pesquisa</button></li>
+              <li class="select-item"><button data-select-item="impacto">Impacto</button></li>
+            </ul>
+          </div>
+
+          <div class="tag-filter" data-tag-filter>
+            <p class="tag-filter-label"><ion-icon name="pricetags-outline"></ion-icon>Tags</p>
+            <ul class="tag-filter-list" data-tag-filter-list></ul>
+            <button class="tag-filter-clear" type="button" data-tag-clear hidden>
+              <ion-icon name="close-outline"></ion-icon>Limpar tags
+            </button>
+          </div>
+
+          <!--
+            Cada projeto é um <li>. Para usar uma foto no lugar da capa ilustrada,
+            troque o <div class="project-cover"> por <img src="./assets/images/..." alt="...">.
+            Tags disponíveis (data-tags): dados, ia, web, educacao, premiado.
+            Link opcional no modal: data-link="https://..." data-link-label="Texto do botão".
+          -->
+          <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="engenharia" data-tags="premiado educacao"
+              data-description="Na equipe de foguetes Rocket Design UFABC, atuei na frente de extensão, levando ciência e engenharia aeroespacial para estudantes de escolas e universidades. A equipe conquistou o 1º lugar no IREC 2025, na categoria 10k SRAD Solid."
+              data-details="Na Rocket Design UFABC, minha atuação foi na frente de extensão: workshops de Ciência e Tecnologia em escolas e universidades, aproximando estudantes de temas como astronomia e engenharia aeroespacial. Também participei do desenvolvimento de protótipos.&#10;&#10;Em 2025, a equipe conquistou o 1º lugar no IREC na categoria 10k SRAD Solid, voltada a foguetes com apogeu-alvo de 10 mil pés e motor sólido projetado e desenvolvido pelos próprios estudantes (SRAD: Student Researched and Designed).">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-engenharia"><ion-icon name="rocket-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Rocket Design UFABC</h3>
+                <p class="project-category">Engenharia</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="engenharia" data-tags="web" data-egg-modal-star="projetos"
+              data-description="Plataforma interna de troca de conhecimentos concebida durante o estágio na Mercedes-Benz Brasil para aproximar colaboradores de áreas diferentes, desenvolvida com HTML, CSS e JavaScript."
+              data-details="Durante o estágio, identifiquei um desafio de colaboração: mesmo após mudanças físicas e a reorganização dos espaços, a interação entre departamentos continuava limitada, o que dificultava a circulação de conhecimento em um processo industrial interdependente.&#10;&#10;A proposta foi uma plataforma em que cada colaborador cadastra o que gostaria de aprender e o que pode ensinar, estimulando trocas entre pessoas de áreas distintas. Desenvolvi a interface e as funcionalidades com HTML, CSS e JavaScript. Cada aprendizado comprovado presencialmente rende estrelas, que podem ser resgatadas por produtos na loja de colaboradores, daí o slogan &quot;Faça sua estrela brilhar&quot;.&#10;&#10;O projeto reuniu identificação de um problema organizacional, pensamento de produto, desenvolvimento web e experiência do usuário a serviço da aprendizagem entre áreas.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-engenharia"><ion-icon name="star-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Faça Sua Estrela Brilhar</h3>
+                <p class="project-category">Engenharia</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="engenharia" data-tags="web"
+              data-description="Projeto acadêmico da UFABC, &quot;Soluções para desafios em engenharia&quot;, em que desenvolvi a estrutura inicial do site do grupo: interface, código e funcionalidades."
+              data-details="No projeto, fiquei responsável por construir a primeira versão do site da equipe: estruturei a interface, escrevi o código e implementei as funcionalidades iniciais que serviram de base para a solução de engenharia proposta pelo grupo. A partir dessa base, os demais integrantes fizeram aprimoramentos, em um processo colaborativo de construção.&#10;&#10;A experiência exercitou a aplicação de conhecimentos técnicos a um desafio de engenharia e o trabalho em equipe, em que uma estrutura inicial bem definida facilitou a evolução do produto por todo o grupo.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-engenharia"><ion-icon name="code-slash-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Soluções para Desafios em Engenharia</h3>
+                <p class="project-category">Engenharia</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="pesquisa" data-tags="dados"
+              data-description="Pesquisa científica na UFABC sobre a produção e a reconstrução do bóson W em colisões de altas energias, com geração de eventos Monte Carlo e análise de dados em colaboração com o SPRACE."
+              data-details="Entre 2024 e 2025, atuei como pesquisadora científica na UFABC estudando o bóson W, uma das partículas mediadoras da interação nuclear fraca. O trabalho envolveu a geração de eventos por simulação Monte Carlo, que reproduz estatisticamente o resultado de colisões em aceleradores de partículas, e a análise dos dados simulados para estudar a produção da partícula e sua reconstrução a partir dos produtos de decaimento.&#10;&#10;A pesquisa foi desenvolvida em colaboração com o SPRACE (São Paulo Research and Analysis Center), centro de pesquisa em física experimental de altas energias. Complementei essa formação com as International Masterclasses on Particle Physics, com foco em IA e em LaTeX para documentação técnica.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-pesquisa"><ion-icon name="nuclear-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Física de Partículas: Bóson W</h3>
+                <p class="project-category">Pesquisa</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="pesquisa" data-tags="dados educacao"
+              data-description="Bolsista de Iniciação Científica do CNPq, com pesquisa voltada à análise de dados e à investigação da construção social de meninas nas áreas STEAM."
+              data-details="A pesquisa articula análise de dados à investigação de como se constrói a relação de meninas com Ciência, Tecnologia, Engenharia, Artes e Matemática. Os eixos de investigação são:&#10;&#10;• Participação e representação de meninas nas áreas STEAM;&#10;• Fatores sociais e culturais que influenciam a presença, a formação e a identificação com essas áreas;&#10;• Uso de análise de dados para observar e compreender fenômenos ligados à educação e à participação.&#10;&#10;O tema conversa diretamente com minha atuação em extensão, como no TecMeninas ABC, unindo pesquisa e prática.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-pesquisa"><ion-icon name="analytics-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Meninas em STEAM (CNPq)</h3>
+                <p class="project-category">Pesquisa</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="pesquisa" data-tags="dados"
+              data-description="Ciência cidadã com a NASA e o MCTI: análise de imagens astronômicas na caça a asteroides e participação em iniciativas científicas."
+              data-details="Como cientista cidadã, participei da campanha Caça Asteroides, em que participantes analisam sequências de imagens de telescópio em busca de objetos que se deslocam entre um quadro e outro, sinais de possíveis asteroides. Também participei de outras iniciativas científicas ligadas à astronomia.&#10;&#10;A experiência aproximou a análise de dados da pesquisa espacial, unindo atenção a detalhes, método e interesse pela área aeroespacial.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-pesquisa"><ion-icon name="telescope-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Citizen Scientist NASA &amp; MCTI</h3>
+                <p class="project-category">Pesquisa</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="impacto" data-tags="educacao" data-demo="tecmeninas"
+              data-description="Projeto de extensão da UFABC que leva programação e letramento digital a meninas de escolas públicas. Em 2026, o projeto alcançou 185 meninas em 6 escolas de 3 cidades do Grande ABC; explore os números acima."
+              data-details="No TecMeninas ABC, atuo como pesquisadora científica em iniciativas de ensino, extensão e popularização da ciência. Apoio o desenvolvimento de atividades de programação e letramento digital para estudantes de escolas públicas e contribuo com a comunicação do projeto, incluindo o Instagram e o site.&#10;&#10;O objetivo é democratizar o acesso à tecnologia e incentivar meninas e jovens a seguir carreiras em STEM, por meio de ações educacionais, formação prática e impacto social. Em 2025, as ações aconteceram nas escolas Adamastor e Nadir; em 2026, o projeto chegou a seis escolas de três cidades do Grande ABC, incluindo Mauá e São Bernardo do Campo.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-impacto"><ion-icon name="laptop-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">TecMeninas ABC</h3>
+                <p class="project-category">Impacto</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="impacto" data-tags="educacao premiado"
+              data-description="Iniciativa que fundei para ampliar o acesso de jovens a simulações da ONU (MUN) e que evoluiu para debates de educação política, aulas de inglês e mentorias."
+              data-details="O Instituto Mello nasceu para aproximar jovens de experiências de formação, debate internacional e simulação diplomática, oportunidades que costumam ser pouco acessíveis. Como fundadora, lidero simulações de MUN e debates voltados à educação política.&#10;&#10;Com o crescimento do projeto, a atuação foi além das simulações: passamos a oferecer aulas de inglês e acompanhamento por meio de mentorias, com eixos em educação, formação cidadã, comunicação e repertório internacional.&#10;&#10;No Yale MUN 2024, simulação da ONU da Yale University, liderei a equipe do Instituto Mello como mentora e guia dos alunos, e a equipe conquistou uma Menção Honrosa.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-impacto"><ion-icon name="earth-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Instituto Mello</h3>
+                <p class="project-category">Impacto</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="impacto" data-tags="ia educacao"
+              data-description="Embaixadora estudantil do Google Gemini em 2026, incentivando o uso de inteligência artificial no ambiente acadêmico."
+              data-details="Como embaixadora, exploro ferramentas de inteligência artificial, compartilho boas práticas e incentivo a aplicação da IA na aprendizagem, na produtividade e na resolução de problemas. O programa conversa com a minha rotina: uso ferramentas como Gemini, ChatGPT, Claude e GitHub Copilot como apoio à pesquisa, à ideação, à programação e à produtividade.&#10;&#10;Nessa mesma frente, participei do GitHub Copilot Day e do Google Cloud Summit Brasil e conquistei o badge Google Cloud de BigQuery &amp; AI.">
+              <a href="#" data-project-trigger>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <div class="project-cover cover-impacto"><ion-icon name="sparkles-outline"></ion-icon></div>
+                </figure>
+                <h3 class="project-title">Embaixadora Google Gemini</h3>
+                <p class="project-category">Impacto</p>
+              </a>
+            </li>
+
+          </ul>
+          <p class="projects-empty" data-projects-empty hidden>Nenhum projeto com essa combinação de filtros.</p>
+        </section>
+
+      </article>
+
+      <!-- =========================================
+           CONTATO
+           ========================================= -->
+      <article class="contact" data-page="contato">
+        <header>
+          <h2 class="h2 article-title">Contato</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://maps.google.com/maps?q=Santo+Andr%C3%A9,+SP&t=&z=12&ie=UTF8&iwloc=&output=embed" width="400" height="300" loading="lazy" title="Mapa de Santo André, SP"></iframe>
+          </figure>
+          <button class="egg-star egg-star-map" type="button" data-egg-star="contato" aria-label="Estrela escondida"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C12.6 8.2 15.8 11.4 22 12C15.8 12.6 12.6 15.8 12 22C11.4 15.8 8.2 12.6 2 12C8.2 11.4 11.4 8.2 12 2Z"/></svg></button>
+        </section>
+
+        <section class="contact-form">
+          <h3 class="h3 form-title">Envie uma mensagem</h3>
+          <!--
+            Sem data-endpoint, o formulário abre o app de email com a mensagem pronta.
+            Para receber pelo Formspree, crie um formulário em formspree.io e preencha:
+            data-endpoint="https://formspree.io/f/SEU_ID"
+          -->
+          <form class="form" data-form data-endpoint="" data-mailto="mariaheloprado@gmail.com">
+
+            <div class="input-wrapper">
+              <input type="text" name="nome" class="form-input" placeholder="Nome completo" aria-label="Nome completo" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Seu email" aria-label="Seu email" required data-form-input>
+            </div>
+
+            <textarea name="mensagem" class="form-input" placeholder="Sua mensagem" aria-label="Sua mensagem" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Enviar mensagem</span>
+            </button>
+
+          </form>
+        </section>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================
+       MODAL DE PROJETOS
+       ========================================= -->
+  <div class="project-modal" data-project-modal aria-hidden="true">
+    <div class="modal-overlay" data-modal-overlay></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close-btn" type="button" data-modal-close aria-label="Fechar">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <h3 id="modal-title">Título do projeto</h3>
+      <ul class="modal-tags" data-modal-tags hidden></ul>
+      <div class="modal-demo" data-modal-demo></div>
+      <div class="modal-cover" data-modal-cover></div>
+      <img data-modal-img src="" alt="" hidden>
+      <p data-modal-description></p>
+      <p data-modal-details></p>
+      <a class="modal-link" data-modal-link href="#" target="_blank" rel="noopener" hidden>
+        <ion-icon name="open-outline"></ion-icon>
+        <span data-modal-link-label>Saiba mais</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/easter-eggs.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

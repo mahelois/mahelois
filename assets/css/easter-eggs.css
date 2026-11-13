@@ -1,0 +1,803 @@
+/* =========================================
+   EASTER EGGS
+   Lógica em assets/js/easter-eggs.js.
+   Para remover tudo: apague este arquivo, o JS e os
+   elementos com data-egg-* no index.html.
+   ========================================= */
+
+/* camada de efeitos (foguete, faíscas, chuva de estrelas) */
+.egg-fx {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10002;
+}
+
+/* =========================================
+   AVISOS (toasts)
+   ========================================= */
+.egg-toasts {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(440px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10003;
+  pointer-events: none;
+}
+
+.egg-toast {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  overflow: hidden;
+  pointer-events: auto;
+  background: hsla(270, 18%, 9%, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 10px 6px 12px 14px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: var(--fw-300);
+  line-height: 1.55;
+  box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.35);
+  animation: egg-toast-in 0.35s ease both;
+}
+
+.egg-toast-body { flex: 1; min-width: 0; padding-top: 1px; }
+
+/* botão de fechar (×) */
+.egg-toast-close {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: -6px 0 -6px 0;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.egg-toast-close:hover,
+.egg-toast-close:focus-visible {
+  color: var(--text-strong);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* barrinha com o tempo que falta (pausa com o mouse em cima) */
+.egg-toast-timer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-gradient-accent);
+  opacity: 0.75;
+  transform-origin: left center;
+  animation: egg-toast-timer var(--toast-ms, 30000ms) linear forwards;
+}
+
+.egg-toast.is-paused .egg-toast-timer { animation-play-state: paused; }
+.egg-toast.is-sticky .egg-toast-timer { display: none; }
+
+@keyframes egg-toast-timer {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+.egg-toast b { color: var(--text-strong); font-weight: var(--fw-500); }
+
+.egg-toast code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+  color: var(--accent);
+  background: rgba(232, 137, 189, 0.1);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.egg-toast.is-leaving { animation: egg-toast-out 0.3s ease forwards; }
+
+@keyframes egg-toast-in {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes egg-toast-out {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+
+/* =========================================
+   1. FOGUETE (Rocket Design UFABC)
+   ========================================= */
+.egg-rocket {
+  display: block;
+  width: max-content;
+  margin: auto;
+  color: inherit;
+  font-size: inherit;
+  line-height: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.egg-rocket ion-icon { transition: opacity 0.4s ease; }
+
+/* motor "esquentando" no hover: a única pista de que dá pra clicar */
+.egg-rocket:hover ion-icon,
+.egg-rocket:focus-visible ion-icon { animation: egg-rumble 0.14s linear infinite; }
+
+/* enquanto o foguete voa, o ícone fica "vazio" na rampa */
+.egg-rocket.is-launching { cursor: progress; }
+.egg-rocket.is-launching ion-icon { opacity: 0.2; animation: none; }
+
+@keyframes egg-rumble {
+  0% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(0.6px, -0.6px) rotate(-2deg); }
+  50% { transform: translate(-0.6px, 0.4px) rotate(1.5deg); }
+  75% { transform: translate(0.4px, 0.6px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+
+/* =========================================
+   2. ESTRELAS ("Faça sua estrela brilhar")
+   ========================================= */
+.egg-star {
+  --star-color: var(--text-muted);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 4px;
+  border-radius: 50%;
+  color: var(--star-color);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease, filter 0.25s ease;
+}
+
+.egg-star svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.egg-star:hover,
+.egg-star:focus-visible {
+  opacity: 1;
+  color: #f5c46b;
+  transform: scale(1.35) rotate(15deg);
+  filter: drop-shadow(0 0 6px rgba(245, 196, 107, 0.8));
+}
+
+.egg-star.is-found {
+  --star-color: #f5c46b;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 5px rgba(245, 196, 107, 0.6));
+  animation: egg-star-twinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes egg-star-twinkle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.15) rotate(12deg); }
+}
+
+/* Sobre mim: no fim do carrossel de tecnologias */
+.egg-star-slot {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  scroll-snap-align: center;
+}
+
+/* Currículo: colada no nome da plataforma criada na Mercedes-Benz */
+.egg-star-inline {
+  vertical-align: -4px;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  margin-left: 3px;
+}
+
+/* Projetos: no meio dos pontinhos da capa, dentro do modal */
+.egg-star-cover {
+  --star-color: #fff;
+  position: absolute;
+  left: 9%;
+  bottom: 14%;
+  z-index: 2;
+}
+
+/* Contato: perdida no mapa */
+.egg-star-map {
+  position: absolute;
+  top: 22%;
+  right: 14%;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================================
+   RECOMPENSA DAS 4 ESTRELAS: o céu do site acende
+   (.egg-sky é criado pelo JS e fica atrás do conteúdo)
+   ========================================= */
+
+/* as estrelinhas originais do fundo ficam mais fortes e com brilho */
+body.egg-sky-on::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 5px rgba(244, 198, 223, 0.6));
+  animation: egg-sky-twinkle 3.2s ease-in-out infinite alternate;
+}
+
+/* os cartões ficam levemente translúcidos para o céu aparecer por trás */
+body.egg-sky-on .sidebar,
+body.egg-sky-on article { background: rgba(19, 16, 25, 0.84); }
+
+.egg-sky {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.egg-sky[hidden] { display: none; }
+.egg-sky.is-arriving { animation: fade 2.2s ease both; }
+
+/* 5 min depois de completar, o céu apaga devagar e a caça recomeça */
+.egg-sky.is-fading { animation: egg-sky-out 2.6s ease forwards; }
+
+@keyframes egg-sky-out {
+  to { opacity: 0; }
+}
+
+/* fundo dos cartões muda suave quando o céu acende/apaga */
+article { transition: background-color 1.2s ease; }
+
+.egg-sky i { position: absolute; display: block; }
+
+/* nebulosa */
+.egg-sky .egg-sky-nebula {
+  inset: -10%;
+  background:
+    radial-gradient(ellipse 50% 40% at 18% 14%, rgba(169, 126, 224, 0.24), transparent 70%),
+    radial-gradient(ellipse 45% 42% at 84% 86%, rgba(232, 137, 189, 0.22), transparent 70%),
+    radial-gradient(ellipse 38% 30% at 74% 24%, rgba(124, 196, 240, 0.1), transparent 70%),
+    radial-gradient(ellipse 30% 26% at 30% 78%, rgba(245, 196, 107, 0.07), transparent 70%);
+  animation: egg-nebula 22s ease-in-out infinite alternate;
+}
+
+/* duas camadas de estrelas grandes, com halo, piscando em ritmos diferentes */
+.egg-sky .egg-sky-stars { inset: 0; animation: egg-sky-twinkle 3s ease-in-out infinite alternate; }
+
+.egg-sky .egg-sky-stars-a {
+  background-image:
+    radial-gradient(circle at 12% 18%, #fff 0 1.4px, rgba(255, 236, 200, 0.55) 2.2px, transparent 7px),
+    radial-gradient(circle at 64% 9%, #fff3d6 0 1.2px, rgba(245, 196, 107, 0.5) 2px, transparent 6px),
+    radial-gradient(circle at 38% 52%, #fff 0 1px, rgba(255, 255, 255, 0.45) 1.8px, transparent 5px),
+    radial-gradient(circle at 86% 66%, #fff 0 1.5px, rgba(244, 198, 223, 0.55) 2.4px, transparent 8px),
+    radial-gradient(circle at 22% 84%, #f4c6df 0 1.2px, rgba(244, 198, 223, 0.45) 2px, transparent 6px);
+  background-size: 280px 280px;
+}
+
+.egg-sky .egg-sky-stars-b {
+  background-image:
+    radial-gradient(circle at 8% 40%, #fff 0 1.6px, rgba(217, 200, 245, 0.6) 2.6px, transparent 9px),
+    radial-gradient(circle at 52% 30%, #fff 0 1.1px, rgba(255, 236, 200, 0.5) 2px, transparent 6px),
+    radial-gradient(circle at 74% 82%, #fff3d6 0 1.4px, rgba(245, 196, 107, 0.55) 2.2px, transparent 8px),
+    radial-gradient(circle at 92% 14%, #fff 0 1.2px, rgba(255, 255, 255, 0.5) 2px, transparent 6px);
+  background-size: 410px 410px;
+  animation-duration: 4.4s;
+  animation-direction: alternate-reverse;
+}
+
+/* estrelas de 4 pontas pulsando */
+.egg-sky .egg-sky-sparkle {
+  width: var(--s);
+  height: var(--s);
+  margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  color: #fff3d6;
+  filter: drop-shadow(0 0 6px rgba(255, 236, 200, 0.95)) drop-shadow(0 0 14px rgba(245, 196, 107, 0.5));
+  animation: egg-sparkle 3.4s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+
+.egg-sky-sparkle svg { display: block; width: 100%; height: 100%; fill: currentColor; }
+
+/* planetas */
+.egg-planet {
+  position: absolute;
+  aspect-ratio: 1;
+  animation: egg-float 9s ease-in-out infinite alternate;
+}
+
+.egg-planet-inner { position: relative; width: 100%; height: 100%; }
+
+.egg-sky .egg-sphere {
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, var(--light) 0%, var(--mid) 42%, var(--dark) 100%);
+  box-shadow: 0 0 34px rgba(var(--glow), 0.45), 0 0 80px rgba(var(--glow), 0.2);
+  overflow: hidden;
+}
+
+/* faixas atmosféricas */
+.egg-sky .egg-sphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-linear-gradient(-14deg, transparent 0 13%, rgba(255, 255, 255, 0.1) 13% 18%, transparent 18% 24%);
+}
+
+.egg-planet-ringed {
+  --light: #f6e6ff; --mid: #b58ae6; --dark: #2a1846; --glow: 169, 126, 224;
+  top: 7%;
+  right: 3%;
+  width: clamp(84px, 10vw, 150px);
+}
+
+.egg-planet-rose {
+  --light: #ffe3f1; --mid: #e889bd; --dark: #3d1434; --glow: 232, 137, 189;
+  left: -3%;
+  bottom: -6%;
+  width: clamp(120px, 17vw, 250px);
+  animation-duration: 12s;
+}
+
+.egg-planet-ice {
+  --light: #eaf7ff; --mid: #7cc4f0; --dark: #10284a; --glow: 124, 196, 240;
+  top: 50%;
+  right: 2.5%;
+  width: clamp(26px, 3.2vw, 48px);
+  animation-duration: 7s;
+}
+
+/* anel: metade de trás antes do planeta, metade da frente recortada por cima */
+.egg-sky .egg-ring {
+  left: -48%;
+  right: -48%;
+  top: 37%;
+  height: 26%;
+  border-radius: 50%;
+  border: 5px solid rgba(244, 198, 223, 0.78);
+  box-shadow: 0 0 12px rgba(244, 198, 223, 0.4), inset 0 0 0 4px rgba(255, 255, 255, 0.12);
+  transform: rotate(-16deg);
+}
+
+.egg-sky .egg-ring-front { clip-path: inset(50% 0 0 0); }
+
+/* lua orbitando o planeta rosa */
+.egg-sky .egg-orbit {
+  inset: -30%;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  animation: egg-orbit 36s linear infinite;
+}
+
+.egg-sky .egg-moon {
+  top: 0;
+  left: 50%;
+  width: 16%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8e8 0%, #f5c46b 50%, #5a3d12 100%);
+  box-shadow: 0 0 14px rgba(245, 196, 107, 0.6);
+}
+
+/* entrada dos planetas na hora da conquista */
+.egg-sky.is-arriving .egg-planet-inner { animation: egg-planet-in 2.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.egg-sky.is-arriving .egg-planet-rose .egg-planet-inner { animation-delay: 0.5s; }
+.egg-sky.is-arriving .egg-planet-ice .egg-planet-inner { animation-delay: 0.9s; }
+
+/* estrelas cadentes de tempos em tempos */
+.egg-sky .egg-sky-meteor {
+  width: 0;
+  height: 0;
+  transform: rotate(145deg);
+}
+
+.egg-sky .egg-sky-meteor::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 170px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to right, rgba(255, 243, 214, 0), rgba(255, 243, 214, 0.95));
+  box-shadow: 0 0 8px rgba(255, 236, 200, 0.7);
+  opacity: 0;
+  animation: egg-meteor 16s linear infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes egg-sky-twinkle {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+
+@keyframes egg-nebula {
+  to { transform: translate(2%, -1.5%) scale(1.05); }
+}
+
+@keyframes egg-sparkle {
+  0%, 100% { transform: scale(0.5) rotate(0); opacity: 0.45; }
+  50% { transform: scale(1.1) rotate(20deg); opacity: 1; }
+}
+
+@keyframes egg-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes egg-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes egg-planet-in {
+  from { opacity: 0; transform: scale(0.35) translateY(60px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes egg-meteor {
+  0% { opacity: 0; transform: translateX(0); }
+  1% { opacity: 1; }
+  7% { opacity: 0; transform: translateX(560px); }
+  100% { opacity: 0; transform: translateX(560px); }
+}
+
+/* =========================================
+   3. ASTEROIDE (Caça Asteroides NASA · MCTI)
+   ========================================= */
+.egg-asteroid {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  z-index: 4;
+  border-radius: 50%;
+  cursor: crosshair;
+  transition: opacity 0.4s ease;
+}
+
+.egg-asteroid i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: #efe2cf;
+}
+
+.egg-asteroid-core {
+  box-shadow: 0 0 6px 1px rgba(239, 226, 207, 0.65);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* posições nos "quadros" anteriores, como na comparação de imagens */
+.egg-asteroid .egg-asteroid-ghost {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  opacity: var(--go);
+  transform: translate(var(--gx), var(--gy));
+  transition: opacity 0.3s ease;
+}
+
+.egg-asteroid:hover .egg-asteroid-core,
+.egg-asteroid:focus-visible .egg-asteroid-core {
+  transform: scale(1.5);
+  box-shadow: 0 0 10px 3px rgba(232, 137, 189, 0.85);
+}
+
+.egg-asteroid:focus-visible { outline-offset: 0; }
+
+/* caixa de detecção + designação provisória */
+.egg-asteroid::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  opacity: 0;
+  transform: scale(1.8);
+  transition: opacity 0.25s ease, transform 0.35s ease-out;
+}
+
+.egg-asteroid::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% - 2px);
+  top: 2px;
+  color: var(--accent);
+  font: 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.15s;
+}
+
+.egg-asteroid.is-caught { cursor: default; }
+.egg-asteroid.is-caught::before { opacity: 1; transform: scale(1); }
+.egg-asteroid.is-caught::after { opacity: 1; }
+.egg-asteroid.is-caught .egg-asteroid-ghost { opacity: 0; }
+.egg-asteroid.is-leaving { opacity: 0; }
+
+/* =========================================
+   4. TERMINAL SECRETO
+   ========================================= */
+.egg-term {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: rgba(5, 3, 8, 0.6);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: fade 0.25s ease;
+}
+
+.egg-term[hidden] { display: none; }
+
+body.egg-term-open { overflow: hidden; }
+
+.egg-term-window {
+  width: min(680px, 100%);
+  height: min(460px, 78vh);
+  height: min(460px, 78dvh);
+  display: flex;
+  flex-direction: column;
+  background: #0d0a12;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-5), 0 0 48px rgba(232, 137, 189, 0.12);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+}
+
+.egg-term-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.egg-term-bar i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.egg-term-bar i:nth-child(2) { background: var(--accent-2); }
+.egg-term-bar i:nth-child(3) { background: #7cc4f0; }
+
+.egg-term-title {
+  flex: 1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.egg-term-close {
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+.egg-term-close:hover { color: var(--accent); }
+
+.egg-term-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px;
+  color: var(--text);
+  line-height: 1.55;
+  cursor: text;
+}
+
+.egg-term-out > div {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.egg-term-out b { font-weight: inherit; }
+.egg-term-out strong { color: var(--text-strong); font-weight: var(--fw-600); }
+
+.t-accent { color: var(--accent); }
+.t-lilac { color: var(--accent-2); }
+.t-muted { color: var(--text-muted); }
+.t-ok { color: #6ee7a8; }
+.t-gold { color: #f5c46b; }
+.t-blue { color: #7cc4f0; }
+
+.egg-term-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.egg-term-line label {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.egg-term-line input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  color: var(--text-strong);
+  caret-color: var(--accent);
+  font: inherit;
+}
+
+.egg-term-line input:focus,
+.egg-term-line input:focus-visible { outline: none; }
+
+/* avatar: 7 toques abrem o terminal (sem selecionar a imagem nos toques rápidos) */
+[data-egg-avatar] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* A regra global de movimento reduzido encurta as animações para 0,01ms, o que faria
+   as animações infinitas piscarem. Aqui elas são desligadas e o céu fica aceso, parado. */
+@media (prefers-reduced-motion: reduce) {
+  .egg-star.is-found,
+  .egg-rocket:hover ion-icon,
+  .egg-rocket:focus-visible ion-icon,
+  body.egg-sky-on::before,
+  .egg-sky,
+  .egg-sky *,
+  .egg-sky *::before { animation: none !important; }
+
+  /* céu aceso e parado: sem estrelas cadentes nem pulsação */
+  body.egg-sky-on::before { opacity: 1; }
+  .egg-toast-timer { display: none; }
+}
+
+@media (max-width: 579px) {
+  .egg-term { padding: 10px; }
+  .egg-term-window { font-size: 12px; }
+  .egg-term-line input { font-size: 16px; } /* evita o zoom automático do iOS */
+}
+
+/* =========================================
+   BANNER REBOCADO (avião cruzando a tela)
+   Animado pelo JS (Web Animations); a cada 3 min.
+   ========================================= */
+.egg-tow {
+  position: fixed;
+  top: 84px;
+  left: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  white-space: nowrap;
+  will-change: transform;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
+.egg-tow[hidden] { display: none; }
+
+.egg-tow-plane { flex-shrink: 0; width: 64px; height: 28px; transform: scaleX(-1); } /* nariz para a esquerda */
+
+.egg-tow-rope {
+  flex-shrink: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--text-muted);
+}
+
+.egg-tow-flag {
+  padding: 8px 18px 8px 16px;
+  background: linear-gradient(90deg, #e889bd, #a97ee0);
+  color: var(--accent-ink);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px 10px 10px 4px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 50%, 100% 100%, 0 100%);
+  padding-right: 28px;
+}
+
+.egg-tow-flag strong { font-weight: 700; }
+
+@media (min-width: 580px) {
+  .egg-tow { top: 90px; }
+  .egg-tow-flag { font-size: 15px; padding-block: 10px; }
+}
+
+/* =========================================
+   FAIXA DE AVISO (topo do site)
+   ========================================= */
+.egg-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 12px 0;
+  padding: 10px 44px 10px 16px;
+  position: relative;
+  background: linear-gradient(90deg, rgba(232, 137, 189, 0.14), rgba(169, 126, 224, 0.14)), var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1, 0 4px 16px rgba(0, 0, 0, 0.25));
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.egg-banner[hidden] { display: none; }
+
+.egg-banner > ion-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.egg-banner-text strong { color: var(--text-strong); font-weight: 600; }
+.egg-banner-text strong:last-of-type { color: var(--accent); }
+
+.egg-banner-close {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.egg-banner-close:hover,
+.egg-banner-close:focus-visible {
+  color: var(--text-strong);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 580px) {
+  .egg-banner { font-size: 14px; padding-block: 12px; margin: 16px auto 0; max-width: 700px; }
+}
